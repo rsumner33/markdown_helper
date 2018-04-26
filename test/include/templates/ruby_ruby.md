@@ -1,1 +1,0 @@
-@[ruby](../includes/ruby.rb)

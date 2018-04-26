@@ -1,1 +1,0 @@
-@[text](../includes/text.txt)
