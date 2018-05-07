@@ -1,101 +1,43 @@
 # MarkdownHelper
 
-[![Gem Version](https://badge.fury.io/rb/markdown_helper.svg)](https://badge.fury.io/rb/markdown_helper)
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/markdown_helper`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-## File Inclusion  <img src="https://raw.githubusercontent.com/BurdetteLamar/MarkdownHelper/master/images/include.png" width="50">
+TODO: Delete this and the text above, and describe your gem
 
-This markdown helper enables file inclusion in GitHub markdown.
+## Installation
 
-(Actually, this README file itself is built using file inclusion.)
+Add this line to your application's Gemfile:
 
-Use the markdown helper to merge external files into a markdown (</code>.md</code>) file.
-
-### Merged Text Formats
-
-#### Highlighted Code Block
-
-<code>include.rb</code>
 ```ruby
-class RubyCode
-  def initialize
-    raise RuntimeError.new('I am only an example!')
-  end
-end
+gem 'markdown_helper'
 ```
 
-#### Plain Code Block
+And then execute:
 
-<code>include.rb</code>
-```
-class RubyCode
-  def initialize
-    raise RuntimeError.new('I am only an example!')
-  end
-end
-```
+    $ bundle
 
-[Note:  In the gem documentation, RubyDoc.info chooses to highlight this code block regardless.  Go figure.]
+Or install it yourself as:
 
-#### Verbatim
+    $ gem install markdown_helper
 
-Verbatim text is included unadorned.  Most often, verbatim text is markdown to be rendered as part of the markdown page.
+## Usage
 
-### Usage
+TODO: Write usage instructions here
 
-#### CLI
+## Development
 
-<code>include.txt</code>
-```
-Usage:
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-  include template_file_path markdown_file_page
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-  where
+## Contributing
 
-    * template_file_path is the path to an existing file.
-    * markdown_file_path is the path to a file to be created.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/markdown_helper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-  Typically:
+## License
 
-    * Both file types are .md.
-    * The template file contains file inclusion pragmas.  See README.md.
-```
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-#### API
+## Code of Conduct
 
-<code>usage.rb</code>
-```ruby
-require 'markdown_helper'
-
-markdown_helper = MarkdownHelper.new
-template_file_path = 'highlight_ruby_template.md'
-markdown_file_path = 'highlighted_ruby.rb'
-markdown_helper.include(template_file_path, markdown_file_path)
-```
-
-#### Include Pragmas
-
-Specify each file inclusion via an *include pragma*, which has the form:
-
-<code>@[</code>*format*<code>]\(</code>*relative_file_path*<code>)</code>
-
-where:
-
-* *format* (in square brackets) is one of the following:
-  * Highlighting mode such as <code>[ruby]</code>, to include a highlighted code block.  This can be any Ace mode mentioned in [GitHub Languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
-  * <code>[:code_block]</code>, to include a plain code block.
-  * <code>[:verbatim]</code>, to include text verbatim (to be rendered as markdown).
-* *relative_file_path* points to the file to be included.
-
-##### Example Include Pragmas
-
-<code>include.md</code>
-```verbatim
-@[ruby](my_ruby.rb)
-
-@[:code_block](my_language.xyzzy)
-
-@[:verbatim](my_markdown.md)
-```
-
-
+Everyone interacting in the MarkdownHelper project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/markdown_helper/blob/master/CODE_OF_CONDUCT.md).
