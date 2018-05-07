@@ -1,1 +1,0 @@
-@[:comment](../includes/text.txt)

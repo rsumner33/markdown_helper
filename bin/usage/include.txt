@@ -1,8 +1,7 @@
+Usage:
 
-Usage: markdown_helper include [options] template_file_path markdown_file_path
-        --pristine                   No comments added
-        --help                       Display help
-    
+  include template_file_path markdown_file_page
+
   where
 
     * template_file_path is the path to an existing file.
@@ -11,4 +10,4 @@ Usage: markdown_helper include [options] template_file_path markdown_file_path
   Typically:
 
     * Both file types are .md.
-    * The template file contains file inclusion descriptions.
+    * The template file contains file inclusion pragmas.  See README.md.
